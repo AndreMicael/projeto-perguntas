@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "postcss-cli": "^10.1.0",
+    "tailwind": "^4.0.0"
+  },
+  "name": "projeto-perguntas",
+  "version": "1.0.0",
+  "description": "Perguntas e Respostas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:styles": "postcss styles.css -o public/styles.css"
+  },
+  "author": "Andre M. Sampaio",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
