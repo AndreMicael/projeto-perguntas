@@ -1,14 +1,24 @@
 const express = require("express"); //Importando express
 const app = express(); //Iniciando o express
 const bodyParser = require("body-parser"); //Importando o body-parser
+const connection = require("./database/database"); //Importando a conexao com o banco de dados
 
+//Database
+//Autenticando a conexao com o banco de dados
+connection.authenticate()
+        .then(() => { 
+            console.log("Conexao feita com o banco de dados!"); //Caso a conexao seja feita com sucesso
+        })
+        .catch((msgErro) => {
+           console.log(msgErro); //Caso a conexao nao seja feita com sucesso ;
+        });
+           
 
 app.set('view engine', 'ejs'); //Setando o ejs como view engine
 app.use(express.static('public')); //Setando a pasta public como estatica
 app.use(express.text()); //Configurando o express para receber textos
 
 //Configurando o body-parser
-// Body parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
