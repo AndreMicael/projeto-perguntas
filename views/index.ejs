@@ -1,7 +1,27 @@
 <%- include('partials/header') %>
 <body>
     <%- include('partials/navbar') %>
-    <h1 class="">Home</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">Perguntas e Respostas</h1>
+        <p class="lead">Faça uma pergunta e encontre a resposta</p>
+        <hr class="my-4">
+        <p>Este é um projeto de perguntas e respostas desenvolvido com Node.js e MySQL</p>
+        <a class="btn btn-primary btn-lg" href="/perguntar" role="button">Perguntar</a>
+    <div class="container"> 
+
+        <% perguntas.forEach(function(pergunta){ %>
+            <div class="card">
+                <div class="card-header">
+                    <h3><%= pergunta.titulo %></h3>
+                </div>
+                <div class="card-body">
+                    <p><%= pergunta.descricao %></p>
+                    <a href="/suapergunta/<%= pergunta.id %>" class="btn btn-primary">Ver Pergunta</a>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
 </body>
 
 <%- include('partials/footer') %>
