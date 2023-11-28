@@ -5,6 +5,7 @@ const connection = require("./database/database"); //Importando a conexao com o 
 const perguntaModel = require("./database/pergunta"); //Importando o model pergunta
 const respostaModel = require("./database/resposta"); //Importando o model resposta
 
+const port = process.env.PORT || 4000; //Porta do servidor
 //Database
 //Autenticando a conexao com o banco de dados
 connection.authenticate()
